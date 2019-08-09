@@ -1,6 +1,6 @@
 package leetcode;
 
-public class ClimbingStairs70 {
+public class LT70_ClimbingStairs {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
