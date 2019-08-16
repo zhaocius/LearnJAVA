@@ -7,7 +7,7 @@ public class IOTest {
 
 	public static void main(String[] args) throws Exception {
 
-		FileInputStream fr = new FileInputStream("a.txt");
+		FileInputStream fr = new FileInputStream("a");
 		byte[] buf = new byte[BSIZE];
 		int len = fr.read(buf);
 		System.out.println(""+len);

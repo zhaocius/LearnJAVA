@@ -15,7 +15,7 @@ public class NIOTest {
 		try {
 			
 			FileChannel fc;		
-			fc=new FileInputStream("a.txt").getChannel();
+			fc=new FileInputStream("a").getChannel();
 			ByteBuffer buff=ByteBuffer.allocate(BSIZE);
 			fc.read(buff);
 			buff.flip();
