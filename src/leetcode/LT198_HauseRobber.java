@@ -4,7 +4,7 @@ public class LT198_HauseRobber {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] nums=new int[]{1,2,3,4,5,6,7};
+		int[] nums=new int[]{1,3,2,4,6,5,7};
 		System.out.println(get(nums));
 	}
 	
