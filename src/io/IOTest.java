@@ -13,7 +13,7 @@ public class IOTest {
 		System.out.println(""+len);
 		fr.close();
 		for (int i = 0; i < 6; i++) {
-			System.out.println((short) buf[i] + " i == " + i);
+			System.out.println((char) buf[i]);
 		}
 
 	}

@@ -22,7 +22,7 @@ public class NIOTest {
 			int i=0;
 			while(buff.hasRemaining()&&i<6){
 				i++;
-			 System.out.println((short)buff.get()+" i == "+i);
+			 System.out.println((short)buff.get());
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
