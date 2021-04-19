@@ -4,7 +4,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class AtomicTest {
 	public static AtomicInteger value = new AtomicInteger(0);
-	public static int value1 = 0;
 	public static final int THREAD_COUNT = 20;
 
 	public static void increase() {
