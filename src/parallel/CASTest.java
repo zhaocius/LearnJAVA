@@ -25,7 +25,7 @@ public class CASTest {
                         e.printStackTrace();
                     }
 //                    System.out.println(count.incrementAndGet());
-                    System.out.println(increase());
+                    System.out.println(increase());  //自己实现incrementAndGet
 
                 }
             }).start();
