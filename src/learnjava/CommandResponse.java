@@ -14,14 +14,6 @@ interface IResponce {
     void onError(String result);
 }
 
-public class ThreadPool {
-    public static void main(String[] args) {
-        ExecutorService service = Executors.newFixedThreadPool(4);
-        PointCommand a = new PointCommand(new DataHolder("haha"));
-        service.execute(new TaskCarrier(a, a));
-    }
-}
-
 class DataHolder {
     public Object date;
 
@@ -74,5 +66,13 @@ class TaskCarrier implements Runnable {
         String a = command.performSend();
         responce.onResponce(a);
 
+    }
+}
+
+public class CommandResponse {
+    public static void main(String[] args) {
+        ExecutorService service = Executors.newFixedThreadPool(4);
+        PointCommand a = new PointCommand(new DataHolder("haha"));
+        service.execute(new TaskCarrier(a, a));
     }
 }
