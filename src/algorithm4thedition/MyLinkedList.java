@@ -2,7 +2,7 @@ package algorithm4thedition;
 
 import java.util.Iterator;
 
-public class OperateNode {
+public class MyLinkedList {
 	Node first = null;
 	int N = 0;
 	int pos = 0;
@@ -139,7 +139,7 @@ public class OperateNode {
 	}
 
 	public static void main(String[] args) {
-		OperateNode on = new OperateNode();
+		MyLinkedList on = new MyLinkedList();
 		on.insert(1);
 		on.insert(2);
 		on.insert(3);
