@@ -10,10 +10,11 @@ public class BinarySearch {
 
 	}
 
+	//循环
 	public static int find(int[] a, int b) {
 		int lo = 0;
 		int hi = a.length - 1;
-		while (lo < hi) {
+		while (lo <= hi) {
 			int mid = lo + (hi - lo) / 2;
 			if (a[mid] > b)
 				hi = mid - 1;
@@ -26,6 +27,7 @@ public class BinarySearch {
 
 	}
 
+	//递归
 	public static int find1(int[] a, int k) {
 		return find2(a, 0, a.length - 1, k);
 	}
