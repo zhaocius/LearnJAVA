@@ -21,6 +21,8 @@ public class CountDownLatchTest {
                     }
                     System.out.println(Thread.currentThread().getName() + " done");
                     countDownLatch.countDown();
+                    System.out.println(Thread.currentThread().getName() + " done done");
+
                 }
             }, "Thread " + i).start();
 
