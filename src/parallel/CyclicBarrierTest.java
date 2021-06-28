@@ -16,7 +16,6 @@ public class CyclicBarrierTest{
         });
         System.out.println("this thread gogogo , Thread name = "+Thread.currentThread().getName());
 
-//        定义三个线程，相当于三个参会的人
         for (int i = 0; i < 3; i++) {
             final int finalI = i;
             new Thread(new Runnable() {
