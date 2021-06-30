@@ -43,7 +43,7 @@ public class BinarySearchTree {
             return new Node(key, value, 1);
         if (key < x.key)
             x.left = put(x.left, key, value);
-        if (key > x.key)
+        else if (key > x.key)
             x.right = put(x.right, key, value);
         else
             x.value = value;
@@ -69,6 +69,18 @@ public class BinarySearchTree {
         }
     }
 
+    public void traverse(){
+        traverse(root);
+    }
+    private void traverse(Node node){
+        if(node == null)
+            return;
+
+        traverse(node.left);
+        System.out.println(node.value);
+        traverse(node.right);
+    }
+
 
     public static void main(String[] args) {
         BinarySearchTree binarySearchTree = new BinarySearchTree();
@@ -83,8 +95,10 @@ public class BinarySearchTree {
         binarySearchTree.put(2, "zhangsan2");
         binarySearchTree.put(4, "zhangsan4");
         binarySearchTree.put(10, "zhangsan10");
-        System.out.println(binarySearchTree.get(4));
+        System.out.println(binarySearchTree.get(3));
         System.out.println(binarySearchTree.getDepth());
+        binarySearchTree.traverse();
+
 
     }
 }
