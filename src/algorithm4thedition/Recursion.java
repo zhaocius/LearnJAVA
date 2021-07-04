@@ -1,4 +1,4 @@
-package learnjava;
+package algorithm4thedition;
 
 public class Recursion {
     public static void main(String[] args){

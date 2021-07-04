@@ -2,48 +2,56 @@ package algorithm4thedition;
 
 public class BinarySearchTree {
     private Node root;
+
     private class Node {
         private int key;
         private String value;
         private Node left, right;
         private int N;
+
         public Node(int key, String value, int N) {
             this.key = key;
             this.value = value;
             this.N = N;
         }
     }
+
     public int size() {
         return size(root);
     }
+
     public int size(Node x) {
         if (x == null)
             return 0;
         else
             return x.N;
     }
+
     public String get(int key) {
         return get(root, key);
     }
+
     private String get(Node x, int key) {
         if (x == null)
             return null;
-        if (key <x.key)
+        if (key < x.key)
             return get(x.left, key);
         else if (key > x.key)
             return get(x.right, key);
         else
             return x.value;
     }
+
     public void put(int key, String value) {
-        root=put(root, key, value);
+        root = put(root, key, value);
     }
+
     private Node put(Node x, int key, String value) {
         if (x == null)
             return new Node(key, value, 1);
         if (key < x.key)
             x.left = put(x.left, key, value);
-        else if (key > x.key)
+        if (key > x.key)
             x.right = put(x.right, key, value);
         else
             x.value = value;
@@ -51,17 +59,18 @@ public class BinarySearchTree {
         return x;
     }
 
-    public int getDepth() {
-        return getDepth(root);
+
+    public int getMaxDepth() {
+        return getMaxDepth(root);
     }
 
 
-    private int getDepth(Node node) {
+    private int getMaxDepth(Node node) {
         if (node == null)
             return 0;
         else {
-            int m = getDepth(node.left);
-            int n = getDepth(node.right);
+            int m = getMaxDepth(node.left);
+            int n = getMaxDepth(node.right);
             if (m > n)
                 return m + 1;
             else
@@ -69,16 +78,23 @@ public class BinarySearchTree {
         }
     }
 
-    public void traverse(){
-        traverse(root);
+    public int getMinDepth() {
+        return getMinDepth(root);
     }
-    private void traverse(Node node){
-        if(node == null)
-            return;
 
-        traverse(node.left);
-        System.out.println(node.value);
-        traverse(node.right);
+
+    private int getMinDepth(Node node) {
+        if (node == null)
+            return 0;
+
+        if(node.left == null && node.right == null)
+            return 1;
+        else if (node.left == null)
+            return getMinDepth(node.right)+1;
+        else if (node.right == null)
+            return getMinDepth(node.left)+1;
+        else
+            return Math.min(getMinDepth(node.left),getMinDepth(node.right))+1;
     }
 
 
@@ -95,10 +111,9 @@ public class BinarySearchTree {
         binarySearchTree.put(2, "zhangsan2");
         binarySearchTree.put(4, "zhangsan4");
         binarySearchTree.put(10, "zhangsan10");
-        System.out.println(binarySearchTree.get(3));
-        System.out.println(binarySearchTree.getDepth());
-        binarySearchTree.traverse();
-
+        System.out.println(binarySearchTree.get(4));
+        System.out.println(binarySearchTree.getMaxDepth());
+        System.out.println(binarySearchTree.getMinDepth());
 
     }
 }

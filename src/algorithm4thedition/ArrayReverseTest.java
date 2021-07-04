@@ -1,4 +1,4 @@
-package learnjava;
+package algorithm4thedition;
 
 public class ArrayReverseTest {
     public static void main(String[] args){
