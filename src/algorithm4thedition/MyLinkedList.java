@@ -3,22 +3,26 @@ package algorithm4thedition;
 import java.util.Iterator;
 
 public class MyLinkedList {
-	Node first = null;
+	public Node first = null;
 	int N = 0;
 	int pos = 0;
 
-	private class Node {
-		int item;
-		Node next;
+	public static class Node {
+		public int item;
+		public Node next;
 		public Node(int i) {
 			item = i;
 		}
 	}
 
 	public void insertFirst(int a) {
-		Node oldfirst = first;
-		first = new Node(a);
-		first.next = oldfirst;
+		if(first == null){
+			first = new Node(a);
+		}else {
+			Node oldfirst = first;
+			first = new Node(a);
+			first.next = oldfirst;
+		}
 		N++;
 	}
 
@@ -33,6 +37,7 @@ public class MyLinkedList {
 	public void insert(int index, int item) {
 		if (index == 0) {
 			insertFirst(item);
+			return;
 		}
 
 		Node current = first;
@@ -102,9 +107,9 @@ public class MyLinkedList {
 	}
 
 	public void display() {
-		for (Node x = first; x != null; x = x.next) {
-			System.out.println(x.item);
-		}
+		Iterator x =  this.iterator();
+		while (x.hasNext())
+			System.out.println(x.next());
 	}
 	
 	public Iterator iterator(){

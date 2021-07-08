@@ -1,13 +1,13 @@
 package algorithm4thedition;
 
 public class BinarySearchTree {
-    private Node root;
+    public Node root;
 
-    private class Node {
-        private int key;
-        private String value;
-        private Node left, right;
-        private int N;
+    public static class Node {
+        public int key;
+        public String value;
+        public Node left, right;
+        public int N;
 
         public Node(int key, String value, int N) {
             this.key = key;
@@ -68,33 +68,33 @@ public class BinarySearchTree {
     private int getMaxDepth(Node node) {
         if (node == null)
             return 0;
-        else {
-            int m = getMaxDepth(node.left);
-            int n = getMaxDepth(node.right);
-            if (m > n)
-                return m + 1;
-            else
-                return n + 1;
-        }
+        int m = getMaxDepth(node.left);
+        int n = getMaxDepth(node.right);
+        if (m > n)
+            return m + 1;
+        else
+            return n + 1;
     }
 
     public int getMinDepth() {
         return getMinDepth(root);
     }
 
-
+    //要注意如果根节点的左或右子树为空的话是构不成子树的。
+    // 而最小深度是要求从根节点到子树的。当左或右子树为空时，不符合要求。
     private int getMinDepth(Node node) {
         if (node == null)
             return 0;
 
-        if(node.left == null && node.right == null)
-            return 1;
-        else if (node.left == null)
-            return getMinDepth(node.right)+1;
-        else if (node.right == null)
-            return getMinDepth(node.left)+1;
-        else
-            return Math.min(getMinDepth(node.left),getMinDepth(node.right))+1;
+        // null节点不参与比较
+        if (root.left == null && root.right != null) {
+            return 1 + getMinDepth(root.right);
+        }
+        // null节点不参与比较
+        if (root.right == null && root.left != null) {
+            return 1 + getMinDepth(root.left);
+        }
+        return 1 + Math.min(getMinDepth(root.left), getMinDepth(root.right));
     }
 
 
