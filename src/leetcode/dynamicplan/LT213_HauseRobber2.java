@@ -1,7 +1,9 @@
-package leetcode;
+package leetcode.dynamicplan;
 
 public class LT213_HauseRobber2 {
 
+
+	//其实就是把环拆成两个队列，一个是从0到n-1，另一个是从1到n，然后返回两个结果最大的。
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] nums=new int[]{1,2,3,4,5,6,7};

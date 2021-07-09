@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.dynamicplan;
 
 public class LT474_OnesAndZeroes {
 

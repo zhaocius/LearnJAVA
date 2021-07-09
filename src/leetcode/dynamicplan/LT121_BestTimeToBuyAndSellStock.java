@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.dynamicplan;
 
 public class LT121_BestTimeToBuyAndSellStock {
 

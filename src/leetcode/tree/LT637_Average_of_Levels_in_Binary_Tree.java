@@ -1,4 +1,4 @@
-
+/*
 public List<Double> averageOfLevels(TreeNode root) {
     List<Double> ret = new ArrayList<>();
     if(root == null) return ret;
@@ -17,3 +17,4 @@ public List<Double> averageOfLevels(TreeNode root) {
     }
     return ret;
 }
+ */
