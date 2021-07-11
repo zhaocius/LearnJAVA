@@ -31,8 +31,6 @@ public class LT300_LongestIncreasingSubsequence {
 		int[] dp=new int[length];
 		Arrays.fill(dp, 1);
 		// 看以前的，比它小的，说明可以接在后面形成一个更长的子序列
-		// int curMax = Integer.MIN_VALUE; 不能这样写，万一前面没有比自己小的，
-		// 这个值就得不到更新
 		for(int i=1;i<length;i++){
 			for(int j=0;j<i;j++){
 				if(nums[i]>nums[j]){

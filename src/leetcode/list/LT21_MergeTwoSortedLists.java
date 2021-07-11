@@ -4,6 +4,8 @@ import algorithm4thedition.MyLinkedList;
 
 public class LT21_MergeTwoSortedLists {
     public static MyLinkedList.Node mergeTwoLists( MyLinkedList.Node l1,MyLinkedList.Node l2) {
+        if(l1==null && l2 == null)
+            return null;
         if(l1 == null) return l2;
         if(l2 == null) return l1;
         MyLinkedList.Node  newHead = null;
