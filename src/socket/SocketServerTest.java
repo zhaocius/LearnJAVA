@@ -6,8 +6,6 @@ import java.io.*;
 /**
  * 将来自客户端的信息加工一下送回去
  * 
- * @author xusucheng
- * @create 2017-12-21
  **/
 public class SocketServerTest {
 	public static void main(String[] args) throws Exception {
